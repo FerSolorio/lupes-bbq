@@ -1,6 +1,18 @@
-import { Flame, Thermometer, Clock, Users, ChefHat } from "lucide-react"
+"use client" // Añadimos esto para asegurar que los iconos se manejen en el cliente
 
-const tips = [
+import { Flame, Thermometer, Clock, Users, ChefHat } from "lucide-react"
+import type { LucideProps } from "lucide-react"
+import type { FunctionComponent } from "react"
+
+// Definimos un tipo para nuestros iconos
+type IconComponent = FunctionComponent<LucideProps>
+
+const tips: {
+  icon: IconComponent
+  title: string
+  description: string
+  tip: string
+}[] = [
   {
     icon: Flame,
     title: "Cómo encender el carbón perfecto",
@@ -53,23 +65,26 @@ export default function EducationalSection() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {tips.map((tip, index) => (
-            <div
-              key={index}
-              className="bg-gray-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-transparent hover:border-orange-100"
-            >
-              <div className="flex items-center justify-center w-16 h-16 bg-orange-500 rounded-full mb-6 mx-auto">
-                <tip.icon size={32} className="text-white" />
-              </div>
+          {tips.map((tip, index) => {
+            const Icon = tip.icon // Asignamos el componente a una variable con mayúscula
+            return (
+              <div
+                key={index}
+                className="bg-gray-50 rounded-2xl p-8 hover:bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-transparent hover:border-orange-100"
+              >
+                <div className="flex items-center justify-center w-16 h-16 bg-orange-500 rounded-full mb-6 mx-auto">
+                  <Icon size={32} className="text-white" />
+                </div>
 
-              <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">{tip.title}</h3>
-              <p className="text-gray-600 mb-4 leading-relaxed">{tip.description}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">{tip.title}</h3>
+                <p className="text-gray-600 mb-4 leading-relaxed">{tip.description}</p>
 
-              <div className="bg-orange-50 border-l-4 border-orange-500 p-4 rounded-r-lg">
-                <p className="text-orange-700 font-medium text-sm">{tip.tip}</p>
+                <div className="bg-orange-50 border-l-4 border-orange-500 p-4 rounded-r-lg">
+                  <p className="text-orange-700 font-medium text-sm">{tip.tip}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
 
         <div className="text-center mt-16">
