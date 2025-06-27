@@ -1,4 +1,5 @@
-import { Facebook, Instagram, Twitter, Youtube, MapPin, Phone, Mail } from "lucide-react"
+"use client" 
+  import { Facebook, Instagram, Twitter, Youtube, MapPin, Phone, Mail } from "lucide-react"
 
 export default function Footer() {
   const socialLinks = [
