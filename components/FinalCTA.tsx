@@ -1,4 +1,5 @@
-import { ChevronRight, Phone, Mail } from "lucide-react"
+"use client" 
+  import { ChevronRight, Phone, Mail } from "lucide-react"
 
 export default function FinalCTA() {
   return (
