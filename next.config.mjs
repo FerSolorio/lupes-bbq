@@ -2,6 +2,7 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
+  distDir: 'out',
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -11,8 +12,7 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/lupes-bbq' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/lupes-bbq/' : '',
+  // Remover basePath y assetPrefix para simplificar
 }
 
 export default nextConfig
