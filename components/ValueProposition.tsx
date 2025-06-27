@@ -1,4 +1,5 @@
-import { Award, Clock, Heart, Truck } from "lucide-react"
+"use client" 
+  import { Award, Clock, Heart, Truck } from "lucide-react"
 
 const values = [
   {
