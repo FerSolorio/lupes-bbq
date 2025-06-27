@@ -1,3 +1,4 @@
+"use client" 
 import { Package, Star, ChevronRight } from "lucide-react"
 
 const bbqBoxes = [
