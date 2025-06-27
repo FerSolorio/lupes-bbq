@@ -19,7 +19,6 @@
         "name": "next"
       }
     ],
-    // Esta es la parte crucial que soluciona el error
     "paths": {
       "@/*": ["./*"]
     }
