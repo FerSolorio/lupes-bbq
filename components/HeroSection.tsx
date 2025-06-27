@@ -1,4 +1,5 @@
-import { ChevronRight } from "lucide-react"
+"use client" 
+  import { ChevronRight } from "lucide-react"
 
 export default function HeroSection() {
   return (
